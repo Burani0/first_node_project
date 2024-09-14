@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Student Application Form
+    link(rel="stylesheet" href="/styles.css")
+  body
+    .container
+      .form-header
+        img(src="/images/form.PNG" alt="CIU Logo") 
+        //- // Add the path to your logo here
+      .form-content
+        h1 Student Application Form
+        form(action="/submit" method="POST")
+          .form-group
+            label(for="firstName") First Name *
+            input(type="text" id="firstName" name="firstName" required)
+          .form-group
+            label(for="lastName") Last Name *
+            input(type="text" id="lastName" name="lastName" required)
+          .form-group
+            label(for="course") Course *
+            select(name="course" required)
+              option(value="") -- Select --
+              option(value="course1") Course 1
+              option(value="course2") Course 2
+          .form-group
+            label(for="entryScheme") Entry Scheme *
+            select(name="entryScheme" required)
+              option(value="") -- Select --
+              option(value="scheme1") Scheme 1
+              option(value="scheme2") Scheme 2
+          .form-group
+            label(for="intake") Intake *
+            select(name="intake" required)
+              option(value="") -- Select --
+              option(value="intake1") Intake 1
+              option(value="intake2") Intake 2
+          .form-group
+            label(for="sponsorship") Sponsorship *
+            select(name="sponsorship" required)
+              option(value="") -- Select --
+              option(value="sponsorship1") Sponsorship 1
+              option(value="sponsorship2") Sponsorship 2
+          .form-group.gender
+            label Gender *
+            .radio-group
+              input(type="radio" id="male" name="gender" value="male" required)
+              label(for="male") Male
+              input(type="radio" id="female" name="gender" value="female" required)
+              label(for="female") Female
+          .form-group
+            label(for="dob") Date of Birth *
+            input(type="text" id="dob" name="dob" placeholder="YYYY / MM / DD" required)
+          .form-group
+            label(for="residence") Residence *
+            input(type="text" id="residence" name="residence" required)
+          button(type="submit") Submit
